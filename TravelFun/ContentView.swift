@@ -9,12 +9,6 @@ import SwiftUI
 
 struct ContentView: View {
 
-  init() {
-    UINavigationBar.appearance().largeTitleTextAttributes = [
-      .foregroundColor: UIColor.white
-    ]
-  }
-
   var body: some View {
     NavigationView {
       HomeView()

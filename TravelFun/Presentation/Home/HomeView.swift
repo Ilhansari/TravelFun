@@ -8,6 +8,12 @@
 import SwiftUI
 
 struct HomeView: View {
+
+  init() {
+    UINavigationBar.appearance().largeTitleTextAttributes = [
+      .foregroundColor: UIColor.white
+    ]
+  }
   
   var body: some View {
     ZStack {
@@ -17,7 +23,7 @@ struct HomeView: View {
                      endPoint: .bottom)
       .ignoresSafeArea()
 
-      Color(.init(white: 0.95, alpha: 1))
+      Color.homeBackground
         .offset(y: 400)
 
       ScrollView {
@@ -33,7 +39,7 @@ struct HomeView: View {
 
           TrendingCreatorsView()
         }
-        .background(Color(.init(white: 0.95, alpha: 1)))
+        .background(Color.homeBackground)
         .cornerRadius(16)
         .padding(.top, 32)
 

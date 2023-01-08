@@ -77,9 +77,7 @@ struct PopularPlacesView: View {
                 Spacer()
               }
               .frame(width: 230, height: 75)
-              .background(Color(.init(white: 0.9, alpha: 1)))
-              .cornerRadius(5)
-              .shadow(color: .gray, radius: 4, x: 0.0, y: 2)
+              .asTile()
             }
           }
         }

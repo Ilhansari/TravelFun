@@ -50,9 +50,7 @@ struct PopularDestinationsView: View {
               .padding(.horizontal, 12)
 
             }
-            .background(Color(.init(white: 0.9, alpha: 1)))
-            .cornerRadius(5)
-            .shadow(color: .gray, radius: 4, x: 0.0, y: 2)
+            .asTile()
           }
         }
         .padding(.horizontal)
@@ -60,7 +58,6 @@ struct PopularDestinationsView: View {
     }
   }
 }
-
 
 struct PopularDestinationsView_Previews: PreviewProvider {
     static var previews: some View {
