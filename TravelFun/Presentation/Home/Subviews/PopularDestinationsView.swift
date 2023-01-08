@@ -7,10 +7,6 @@
 
 import SwiftUI
 
-struct Destination: Hashable {
-  let country, city, imageName: String
-}
-
 struct PopularDestinationsView: View {
 
   private let destinations: [Destination] = [

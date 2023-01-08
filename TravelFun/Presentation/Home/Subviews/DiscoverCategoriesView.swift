@@ -7,10 +7,6 @@
 
 import SwiftUI
 
-struct Category: Hashable {
-  let name, imageName: String
-}
-
 struct DiscoverCategoriesView: View {
 
   private let categories: [Category] = [

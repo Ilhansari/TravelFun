@@ -7,10 +7,6 @@
 
 import SwiftUI
 
-struct Restaurant: Hashable {
-  let restaurantName, score, foodImageName, foodName, currency, city, country: String
-}
-
 struct PopularPlacesView: View {
 
   let restaurants: [Restaurant] = [
