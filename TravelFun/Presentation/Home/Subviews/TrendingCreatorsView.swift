@@ -51,6 +51,9 @@ struct TrendingCreatorsView: View {
 
 struct TrendingCreators_Previews: PreviewProvider {
     static var previews: some View {
-      TrendingCreatorsView()
+      VStack {
+        TrendingCreatorsView()
+      }
+
     }
 }

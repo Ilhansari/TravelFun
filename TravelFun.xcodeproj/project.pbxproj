@@ -22,7 +22,9 @@
 		0F667C60296ADE8000120085 /* Destination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F667C5F296ADE8000120085 /* Destination.swift */; };
 		0F667C63296ADE9400120085 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F667C62296ADE9400120085 /* Category.swift */; };
 		0F667C66296AE1C100120085 /* TileModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F667C65296AE1C100120085 /* TileModifier.swift */; };
-		0F667C68296AE21C00120085 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F667C67296AE21C00120085 /* Color.swift */; };
+		0F667C68296AE21C00120085 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F667C67296AE21C00120085 /* Color+Extension.swift */; };
+		0F80A485296CB3F40024E7C0 /* CategoryDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F80A484296CB3F40024E7C0 /* CategoryDetail.swift */; };
+		0F80A487296CB4190024E7C0 /* CategoryDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F80A486296CB4190024E7C0 /* CategoryDetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,7 +55,9 @@
 		0F667C5F296ADE8000120085 /* Destination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Destination.swift; sourceTree = "<group>"; };
 		0F667C62296ADE9400120085 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		0F667C65296AE1C100120085 /* TileModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileModifier.swift; sourceTree = "<group>"; };
-		0F667C67296AE21C00120085 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		0F667C67296AE21C00120085 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
+		0F80A484296CB3F40024E7C0 /* CategoryDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetail.swift; sourceTree = "<group>"; };
+		0F80A486296CB4190024E7C0 /* CategoryDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +150,7 @@
 				0F667C51296AD8C000120085 /* PopularPlacesView.swift */,
 				0F667C4F296AD85100120085 /* PopularDestinationsView.swift */,
 				0F667C4D296AD7DC00120085 /* DiscoverCategoriesView.swift */,
+				0F80A486296CB4190024E7C0 /* CategoryDetailsView.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -165,6 +170,7 @@
 				0F667C5F296ADE8000120085 /* Destination.swift */,
 				0F667C5D296ADE6D00120085 /* Restaurant.swift */,
 				0F667C5B296ADE5B00120085 /* User.swift */,
+				0F80A484296CB3F40024E7C0 /* CategoryDetail.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -172,10 +178,26 @@
 		0F667C64296AE1B100120085 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				0F667C65296AE1C100120085 /* TileModifier.swift */,
-				0F667C67296AE21C00120085 /* Color.swift */,
+				0F667C6A296AE45300120085 /* Color+Extension */,
+				0F667C69296AE43B00120085 /* Modifiers */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		0F667C69296AE43B00120085 /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				0F667C65296AE1C100120085 /* TileModifier.swift */,
+			);
+			path = Modifiers;
+			sourceTree = "<group>";
+		};
+		0F667C6A296AE45300120085 /* Color+Extension */ = {
+			isa = PBXGroup;
+			children = (
+				0F667C67296AE21C00120085 /* Color+Extension.swift */,
+			);
+			path = "Color+Extension";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,14 +302,16 @@
 			files = (
 				0F667C21296AD53900120085 /* ContentView.swift in Sources */,
 				0F667C58296ADA9100120085 /* HomeView.swift in Sources */,
+				0F80A487296CB4190024E7C0 /* CategoryDetailsView.swift in Sources */,
 				0F667C60296ADE8000120085 /* Destination.swift in Sources */,
 				0F667C54296AD90800120085 /* TrendingCreatorsView.swift in Sources */,
-				0F667C68296AE21C00120085 /* Color.swift in Sources */,
+				0F667C68296AE21C00120085 /* Color+Extension.swift in Sources */,
 				0F667C1F296AD53900120085 /* TravelFunApp.swift in Sources */,
 				0F667C5C296ADE5B00120085 /* User.swift in Sources */,
 				0F667C4E296AD7DC00120085 /* DiscoverCategoriesView.swift in Sources */,
 				0F667C52296AD8C000120085 /* PopularPlacesView.swift in Sources */,
 				0F667C5E296ADE6D00120085 /* Restaurant.swift in Sources */,
+				0F80A485296CB3F40024E7C0 /* CategoryDetail.swift in Sources */,
 				0F667C50296AD85100120085 /* PopularDestinationsView.swift in Sources */,
 				0F667C66296AE1C100120085 /* TileModifier.swift in Sources */,
 				0F667C63296ADE9400120085 /* Category.swift in Sources */,

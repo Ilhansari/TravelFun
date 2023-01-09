@@ -20,19 +20,24 @@ struct DiscoverCategoriesView: View {
     ScrollView(.horizontal, showsIndicators: false) {
       HStack(alignment: .top, spacing: 8) {
         ForEach(categories, id: \.self) { category in
-          VStack(spacing: 4) {
-            Image(systemName: category.imageName)
-              .frame(width: 64, height: 64)
-              .foregroundColor(Color(#colorLiteral(red: 1, green: 0.6967965364, blue: 0.2615769506, alpha: 1)))
-              .background(Color(.init(white: 0.9, alpha: 1)))
-              .cornerRadius(32)
-              .shadow(color: .gray, radius: 4, x: 0.0, y: 2)
-            Text(category.name)
-              .font(.system(size: 12, weight: .semibold))
-              .foregroundColor(.white)
-              .multilineTextAlignment(.center)
+          NavigationLink {
+            CategoryDetailsView()
+          } label: {
+            VStack(spacing: 4) {
+              Image(systemName: category.imageName)
+                .frame(width: 64, height: 64)
+                .foregroundColor(Color(#colorLiteral(red: 1, green: 0.6967965364, blue: 0.2615769506, alpha: 1)))
+                .background(Color(.init(white: 0.9, alpha: 1)))
+                .cornerRadius(32)
+                .shadow(color: .gray, radius: 4, x: 0.0, y: 2)
+              Text(category.name)
+                .font(.system(size: 12, weight: .semibold))
+                .foregroundColor(.white)
+                .multilineTextAlignment(.center)
+            }
+            .frame(width: 70)
           }
-          .frame(width: 70)
+
         }
       }.padding(.horizontal)
     }
@@ -40,7 +45,9 @@ struct DiscoverCategoriesView: View {
 }
 
 struct DiscoverCategoriesView_Previews: PreviewProvider {
-    static var previews: some View {
-        DiscoverCategoriesView()
+  static var previews: some View {
+    NavigationView {
+      HomeView()
     }
+  }
 }
