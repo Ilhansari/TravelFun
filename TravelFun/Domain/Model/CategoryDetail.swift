@@ -7,6 +7,8 @@
 
 import Foundation
 
-struct CategoryDetail: Hashable {
-  let name, imageName: String
+struct CategoryDetail: Decodable, Hashable {
+  let id: Int
+  let name: String
+  let thumbnail: String
 }

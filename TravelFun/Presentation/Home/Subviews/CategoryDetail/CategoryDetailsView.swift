@@ -19,7 +19,7 @@ struct CategoryDetailsView: View {
         ScrollView {
           ForEach(viewModel.categories, id: \.self) { categoryDetail in
             VStack(alignment: .leading) {
-              Image(categoryDetail.imageName)
+              Image(categoryDetail.thumbnail)
                 .resizable()
                 .scaledToFill()
               Text(categoryDetail.name)

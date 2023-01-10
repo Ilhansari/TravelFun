@@ -10,15 +10,27 @@ import Foundation
 final class CategoryDetailsViewModel: ObservableObject {
 
   @Published var isLoading: Bool = true
+  @Published var errorMessage: String = ""
   @Published var categories = [CategoryDetail]()
 
   init() {
-    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-      self.isLoading = false
-      self.categories = [
-        CategoryDetail(name: "Art", imageName: "art1"),
-        CategoryDetail(name: "Sport", imageName: "art2"),
-      ]
+
+    guard let url = URL(string: "https://travel.letsbuildthatapp.com/travel_discovery/category?name=art") else  { return }
+
+    URLSession.shared.dataTask(with: url) { (data, response, error) in
+      DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+
+        guard let data = data else { return }
+
+        do {
+          self.categories = try JSONDecoder().decode([CategoryDetail].self, from: data)
+        } catch {
+          print("Failed to decode JSON:", error)
+          self.errorMessage = error.localizedDescription
+        }
+        self.isLoading = false
+      }
     }
+    .resume()
   }
 }
