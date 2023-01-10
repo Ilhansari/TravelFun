@@ -16,6 +16,7 @@ struct DiscoverCategoriesView: View {
     Category(name: "Food", imageName: "scribble.variable"),
     Category(name: "History", imageName: "music.mic"),
   ]
+
   var body: some View {
     ScrollView(.horizontal, showsIndicators: false) {
       HStack(alignment: .top, spacing: 8) {
