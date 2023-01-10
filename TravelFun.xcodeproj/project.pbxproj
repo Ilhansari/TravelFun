@@ -25,6 +25,7 @@
 		0F667C68296AE21C00120085 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F667C67296AE21C00120085 /* Color+Extension.swift */; };
 		0F80A485296CB3F40024E7C0 /* CategoryDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F80A484296CB3F40024E7C0 /* CategoryDetail.swift */; };
 		0F80A487296CB4190024E7C0 /* CategoryDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F80A486296CB4190024E7C0 /* CategoryDetailsView.swift */; };
+		0FEAA906296DFEA800D46346 /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEAA905296DFEA800D46346 /* ActivityIndicatorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		0F667C67296AE21C00120085 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		0F80A484296CB3F40024E7C0 /* CategoryDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetail.swift; sourceTree = "<group>"; };
 		0F80A486296CB4190024E7C0 /* CategoryDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetailsView.swift; sourceTree = "<group>"; };
+		0FEAA905296DFEA800D46346 /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +180,7 @@
 		0F667C64296AE1B100120085 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				0FEAA903296DFE8A00D46346 /* Common */,
 				0F667C6A296AE45300120085 /* Color+Extension */,
 				0F667C69296AE43B00120085 /* Modifiers */,
 			);
@@ -198,6 +201,22 @@
 				0F667C67296AE21C00120085 /* Color+Extension.swift */,
 			);
 			path = "Color+Extension";
+			sourceTree = "<group>";
+		};
+		0FEAA903296DFE8A00D46346 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				0FEAA904296DFE9000D46346 /* Components */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		0FEAA904296DFE9000D46346 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				0FEAA905296DFEA800D46346 /* ActivityIndicatorView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,6 +330,7 @@
 				0F667C4E296AD7DC00120085 /* DiscoverCategoriesView.swift in Sources */,
 				0F667C52296AD8C000120085 /* PopularPlacesView.swift in Sources */,
 				0F667C5E296ADE6D00120085 /* Restaurant.swift in Sources */,
+				0FEAA906296DFEA800D46346 /* ActivityIndicatorView.swift in Sources */,
 				0F80A485296CB3F40024E7C0 /* CategoryDetail.swift in Sources */,
 				0F667C50296AD85100120085 /* PopularDestinationsView.swift in Sources */,
 				0F667C66296AE1C100120085 /* TileModifier.swift in Sources */,
