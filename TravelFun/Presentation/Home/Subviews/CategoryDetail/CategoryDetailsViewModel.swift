@@ -13,9 +13,9 @@ final class CategoryDetailsViewModel: ObservableObject {
   @Published var errorMessage: String = ""
   @Published var categories = [CategoryDetail]()
 
-  init() {
+  init(name: String) {
 
-    guard let url = URL(string: "https://travel.letsbuildthatapp.com/travel_discovery/category?name=art") else  { return }
+    guard let url = URL(string: "https://travel.letsbuildthatapp.com/travel_discovery/category?name=\(name.lowercased().addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "")") else  { return }
 
     URLSession.shared.dataTask(with: url) { (data, response, error) in
       DispatchQueue.main.asyncAfter(deadline: .now() + 1) {

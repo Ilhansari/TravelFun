@@ -9,7 +9,11 @@ import SwiftUI
 
 struct CategoryDetailsView: View {
 
-  @ObservedObject private var viewModel = CategoryDetailsViewModel()
+  @ObservedObject private var viewModel: CategoryDetailsViewModel
+
+  init(name: String) {
+    self.viewModel = .init(name: name)
+  }
 
   var body: some View {
     ZStack {
@@ -17,12 +21,10 @@ struct CategoryDetailsView: View {
         ActivityIndicator()
       } else {
         ScrollView {
-          ForEach(viewModel.categories, id: \.self) { categoryDetail in
+          ForEach(viewModel.categories, id: \.self) { category in
             VStack(alignment: .leading) {
-              Image(categoryDetail.thumbnail)
-                .resizable()
-                .scaledToFill()
-              Text(categoryDetail.name)
+              AsyncImage(url: URL(string: category.thumbnail), scale: 2.2)
+              Text(category.name)
                 .font(.system(size: 14, weight: .semibold))
                 .padding()
             }
@@ -38,6 +40,8 @@ struct CategoryDetailsView: View {
 
 struct CategoryDetailsView_Previews: PreviewProvider {
   static var previews: some View {
-    CategoryDetailsView()
+    NavigationView {
+      CategoryDetailsView(name: "Art")
+    }
   }
 }
