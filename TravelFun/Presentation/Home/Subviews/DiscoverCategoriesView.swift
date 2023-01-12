@@ -22,7 +22,7 @@ struct DiscoverCategoriesView: View {
       HStack(alignment: .top, spacing: 8) {
         ForEach(categories, id: \.self) { category in
           NavigationLink {
-            CategoryDetailsView(name: category.name)
+            NavigationLazyView(CategoryDetailsView(name: category.name))
           } label: {
             VStack(spacing: 4) {
               Image(systemName: category.imageName)

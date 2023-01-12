@@ -14,7 +14,7 @@ final class CategoryDetailsViewModel: ObservableObject {
   @Published var categories = [CategoryDetail]()
 
   init(name: String) {
-
+    print("Call the network request which is \(name)")
     guard let url = URL(string: "https://travel.letsbuildthatapp.com/travel_discovery/category?name=\(name.lowercased().addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "")") else  { return }
 
     URLSession.shared.dataTask(with: url) { (data, response, error) in
