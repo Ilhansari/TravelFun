@@ -10,10 +10,10 @@ import SwiftUI
 struct PopularDestinationsView: View {
 
   private let destinations: [Destination] = [
-    .init(country: "France", city: "Paris", imageName: "eiffel_tower"),
-    .init(country: "Japan", city: "Tokyo", imageName: "japan"),
-    .init(country: "USA", city: "NewYork", imageName: "new_york"),
-    .init(country: "Netherlands", city: "Rotterdam", imageName: "eiffel_tower")
+    .init(country: "France", city: "Paris", imageName: "eiffel_tower", latitude: 48.8566, longitude: 2.3522),
+    .init(country: "Japan", city: "Tokyo", imageName: "japan", latitude: 35.6895, longitude: 139.6917),
+    .init(country: "USA", city: "NewYork", imageName: "new_york", latitude: 40.730610, longitude: -73.935242),
+    .init(country: "Netherlands", city: "Rotterdam", imageName: "eiffel_tower", latitude: 51.922, longitude: 4.48)
   ]
   var body: some View {
     VStack {
