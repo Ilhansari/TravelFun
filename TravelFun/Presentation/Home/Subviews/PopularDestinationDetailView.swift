@@ -18,8 +18,7 @@ struct PopularDestinationDetailView: View {
     self.destination = destination
     self._region = State(initialValue: MKCoordinateRegion(center: .init(latitude: destination.latitude,
                                                                        longitude: destination.longitude),
-                                                         latitudinalMeters: 0.1,
-                                                         longitudinalMeters: 0.1))
+                                                          span: .init(latitudeDelta: 0.01, longitudeDelta: 0.01)))
   }
 
   var body: some View {
@@ -54,8 +53,7 @@ struct PopularDestinationDetailView: View {
           .padding(.top, 4)
 
           Map(coordinateRegion: $region)
-            .frame(height: 250)
-
+            .frame(height: 200)
         }
         .padding(.horizontal, 12)
       }
@@ -68,7 +66,6 @@ struct PopularDestinationDetailView_Previews: PreviewProvider {
   static var previews: some View {
     PopularDestinationDetailView(destination: .init(country: "Paris",
                                                     city: "France",
-                                                    imageName: "eiffel_tower", latitude: 48.0,
-                                                    longitude: 37.0))
+                                                    imageName: "eiffel_tower", latitude: 48.8566, longitude: 2.3522))
   }
 }
