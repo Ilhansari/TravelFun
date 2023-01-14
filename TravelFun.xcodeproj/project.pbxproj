@@ -25,6 +25,7 @@
 		0F667C68296AE21C00120085 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F667C67296AE21C00120085 /* Color+Extension.swift */; };
 		0F80A485296CB3F40024E7C0 /* CategoryDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F80A484296CB3F40024E7C0 /* CategoryDetail.swift */; };
 		0F80A487296CB4190024E7C0 /* CategoryDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F80A486296CB4190024E7C0 /* CategoryDetailsView.swift */; };
+		0F86B90C29730F89007489C7 /* Annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F86B90B29730F89007489C7 /* Annotation.swift */; };
 		0F9E54442970B95F00B46232 /* NavigationLazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9E54432970B95F00B46232 /* NavigationLazyView.swift */; };
 		0F9E54462970BDFA00B46232 /* PopularDestinationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9E54452970BDFA00B46232 /* PopularDestinationDetailView.swift */; };
 		0FEAA906296DFEA800D46346 /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEAA905296DFEA800D46346 /* ActivityIndicatorView.swift */; };
@@ -63,6 +64,7 @@
 		0F667C67296AE21C00120085 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		0F80A484296CB3F40024E7C0 /* CategoryDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetail.swift; sourceTree = "<group>"; };
 		0F80A486296CB4190024E7C0 /* CategoryDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetailsView.swift; sourceTree = "<group>"; };
+		0F86B90B29730F89007489C7 /* Annotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Annotation.swift; sourceTree = "<group>"; };
 		0F9E54432970B95F00B46232 /* NavigationLazyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationLazyView.swift; sourceTree = "<group>"; };
 		0F9E54452970BDFA00B46232 /* PopularDestinationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularDestinationDetailView.swift; sourceTree = "<group>"; };
 		0FEAA905296DFEA800D46346 /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
@@ -156,12 +158,12 @@
 		0F667C56296ADA4900120085 /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
+				0F86B909297308AA007489C7 /* DestinationDetail */,
 				0F667C53296AD90800120085 /* TrendingCreatorsView.swift */,
 				0F667C51296AD8C000120085 /* PopularPlacesView.swift */,
 				0F667C4F296AD85100120085 /* PopularDestinationsView.swift */,
 				0F667C4D296AD7DC00120085 /* DiscoverCategoriesView.swift */,
 				0FEAA907296DFF0000D46346 /* CategoryDetail */,
-				0F9E54452970BDFA00B46232 /* PopularDestinationDetailView.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -210,6 +212,23 @@
 				0F667C67296AE21C00120085 /* Color+Extension.swift */,
 			);
 			path = "Color+Extension";
+			sourceTree = "<group>";
+		};
+		0F86B909297308AA007489C7 /* DestinationDetail */ = {
+			isa = PBXGroup;
+			children = (
+				0F86B90A29730F77007489C7 /* Annotation */,
+				0F9E54452970BDFA00B46232 /* PopularDestinationDetailView.swift */,
+			);
+			path = DestinationDetail;
+			sourceTree = "<group>";
+		};
+		0F86B90A29730F77007489C7 /* Annotation */ = {
+			isa = PBXGroup;
+			children = (
+				0F86B90B29730F89007489C7 /* Annotation.swift */,
+			);
+			path = Annotation;
 			sourceTree = "<group>";
 		};
 		0FEAA903296DFE8A00D46346 /* Common */ = {
@@ -358,6 +377,7 @@
 				0F9E54442970B95F00B46232 /* NavigationLazyView.swift in Sources */,
 				0F667C66296AE1C100120085 /* TileModifier.swift in Sources */,
 				0FEAA90B296E008C00D46346 /* ActivityIndicator.swift in Sources */,
+				0F86B90C29730F89007489C7 /* Annotation.swift in Sources */,
 				0F667C63296ADE9400120085 /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

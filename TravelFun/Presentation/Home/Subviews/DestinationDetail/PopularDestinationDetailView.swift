@@ -13,12 +13,20 @@ struct PopularDestinationDetailView: View {
   let destination: Destination
 
   @State var region: MKCoordinateRegion
+  @State var isShowAttractions: Bool = true
+
+
+  let attractions: [Attraction] = [
+    .init(name: "Eiffel Tower", latitude: 48.859565, longitude: 2.35),
+    .init(name: "Champs", latitude: 48.866867, longitude: 2.311780),
+    .init(name: "Louvre", latitude: 48.860288, longitude: 2.337789)
+  ]
 
   init(destination: Destination) {
     self.destination = destination
     self._region = State(initialValue: MKCoordinateRegion(center: .init(latitude: destination.latitude,
                                                                        longitude: destination.longitude),
-                                                          span: .init(latitudeDelta: 0.01, longitudeDelta: 0.01)))
+                                                          span: .init(latitudeDelta: 0.1, longitudeDelta: 0.1)))
   }
 
   var body: some View {
@@ -43,17 +51,32 @@ struct PopularDestinationDetailView: View {
             }
           }
           .padding(.top, 2)
-          Text("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.")
+          Text("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown.")
             .padding(.top, 4)
 
           HStack {
             Text("Location")
               .font(.system(size: 16, weight: .semibold))
+            Spacer()
+            Button {
+              isShowAttractions.toggle()
+            } label: {
+              Text("\(isShowAttractions ? "Hide" : "Show") attractions")
+                .font(.system(size: 16, weight: .semibold))
+            }
+            Toggle("Toggle", isOn: $isShowAttractions)
+              .labelsHidden()
           }
           .padding(.top, 4)
 
-          Map(coordinateRegion: $region)
-            .frame(height: 200)
+          Map(coordinateRegion: $region,
+              annotationItems: isShowAttractions ? attractions : [])
+              { attraction in
+                MapMarker(coordinate: .init(latitude: attraction.latitude,
+                                            longitude: attraction.longitude),
+                          tint: .red)
+          }
+            .frame(height: 350)
         }
         .padding(.horizontal, 12)
       }
