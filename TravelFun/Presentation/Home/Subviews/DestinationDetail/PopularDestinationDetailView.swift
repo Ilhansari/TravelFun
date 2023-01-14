@@ -15,11 +15,10 @@ struct PopularDestinationDetailView: View {
   @State var region: MKCoordinateRegion
   @State var isShowAttractions: Bool = true
 
-
   let attractions: [Attraction] = [
-    .init(name: "Eiffel Tower", latitude: 48.859565, longitude: 2.35),
-    .init(name: "Champs", latitude: 48.866867, longitude: 2.311780),
-    .init(name: "Louvre", latitude: 48.860288, longitude: 2.337789)
+    .init(imageName: "eiffel_tower", name: "Eiffel Tower", latitude: 48.859565, longitude: 2.35),
+    .init(imageName: "billy", name: "Champs", latitude: 48.866867, longitude: 2.311780),
+    .init(imageName: "sam", name: "Louvre", latitude: 48.860288, longitude: 2.337789)
   ]
 
   init(destination: Destination) {
@@ -35,7 +34,7 @@ struct PopularDestinationDetailView: View {
         Image(destination.imageName)
           .resizable()
           .scaledToFill()
-          .frame(height: 200)
+          .frame(height: 250)
           .clipped()
 
         Group {
@@ -72,9 +71,10 @@ struct PopularDestinationDetailView: View {
           Map(coordinateRegion: $region,
               annotationItems: isShowAttractions ? attractions : [])
               { attraction in
-                MapMarker(coordinate: .init(latitude: attraction.latitude,
-                                            longitude: attraction.longitude),
-                          tint: .red)
+                MapAnnotation(coordinate: .init(latitude: attraction.latitude,
+                                                longitude: attraction.longitude)) {
+                  AnnotationView(attraction: attraction)
+                }
           }
             .frame(height: 350)
         }
