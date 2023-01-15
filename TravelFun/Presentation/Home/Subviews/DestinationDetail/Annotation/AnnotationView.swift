@@ -12,10 +12,10 @@ struct AnnotationView: View {
   let attraction: Attraction
 
   var body: some View {
-    VStack(spacing: 8) {
+    VStack(spacing: 4) {
       Image(attraction.imageName)
         .resizable()
-        .frame(width: 100, height: 60)
+        .frame(width: 90, height: 60)
         .cornerRadius(4)
       LinearGradient(gradient: Gradient(colors: [.red, .blue]), startPoint: .topLeading, endPoint: .bottomTrailing)
           .frame(width: 95, height: 30)
