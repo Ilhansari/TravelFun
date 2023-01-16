@@ -11,3 +11,7 @@ struct Destination: Hashable {
   let country, city, imageName: String
   let latitude, longitude: Double
 }
+
+struct DestinationDetails: Decodable {
+  let photos: [String]
+}

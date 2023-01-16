@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F37368F2975F5B000B1E9EF /* PopularDestinationDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F37368E2975F5B000B1E9EF /* PopularDestinationDetailViewModel.swift */; };
 		0F667C1F296AD53900120085 /* TravelFunApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F667C1E296AD53900120085 /* TravelFunApp.swift */; };
 		0F667C21296AD53900120085 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F667C20296AD53900120085 /* ContentView.swift */; };
 		0F667C23296AD53C00120085 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F667C22296AD53C00120085 /* Assets.xcassets */; };
@@ -47,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F37368E2975F5B000B1E9EF /* PopularDestinationDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularDestinationDetailViewModel.swift; sourceTree = "<group>"; };
 		0F667C1B296AD53900120085 /* TravelFun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelFun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F667C1E296AD53900120085 /* TravelFunApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelFunApp.swift; sourceTree = "<group>"; };
 		0F667C20296AD53900120085 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 				0F86B90A29730F77007489C7 /* Annotation */,
 				0F9E54452970BDFA00B46232 /* PopularDestinationDetailView.swift */,
 				0F86B90F29731980007489C7 /* HeaderDestinationContainer.swift */,
+				0F37368E2975F5B000B1E9EF /* PopularDestinationDetailViewModel.swift */,
 			);
 			path = DestinationDetail;
 			sourceTree = "<group>";
@@ -398,6 +401,7 @@
 				0F86B91029731980007489C7 /* HeaderDestinationContainer.swift in Sources */,
 				0FEAA90B296E008C00D46346 /* ActivityIndicator.swift in Sources */,
 				0F86B90C29730F89007489C7 /* Annotation.swift in Sources */,
+				0F37368F2975F5B000B1E9EF /* PopularDestinationDetailViewModel.swift in Sources */,
 				0F667C63296ADE9400120085 /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

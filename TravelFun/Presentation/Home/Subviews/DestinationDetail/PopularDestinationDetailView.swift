@@ -10,6 +10,8 @@ import MapKit
 
 struct PopularDestinationDetailView: View {
 
+  @ObservedObject var viewModel: PopularDestinationDetailViewModel
+
   let destination: Destination
 
   @State var region: MKCoordinateRegion
@@ -31,13 +33,17 @@ struct PopularDestinationDetailView: View {
     self._region = State(initialValue: MKCoordinateRegion(center: .init(latitude: destination.latitude,
                                                                        longitude: destination.longitude),
                                                           span: .init(latitudeDelta: 0.1, longitudeDelta: 0.1)))
+    self.viewModel = .init(name: destination.city)
   }
 
   var body: some View {
     ScrollView {
       VStack(alignment: .leading) {
-        HeaderDestinationContainer(imageURLStrings: imageURLsString)
-          .frame(height: 250)
+
+        if let photos = viewModel.details?.photos {
+          HeaderDestinationContainer(imageURLStrings: photos)
+            .frame(height: 250)
+        }
 
         Group {
           Text(destination.city)
