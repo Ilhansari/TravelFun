@@ -30,6 +30,7 @@
 		0F86B91029731980007489C7 /* HeaderDestinationContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F86B90F29731980007489C7 /* HeaderDestinationContainer.swift */; };
 		0F9E54442970B95F00B46232 /* NavigationLazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9E54432970B95F00B46232 /* NavigationLazyView.swift */; };
 		0F9E54462970BDFA00B46232 /* PopularDestinationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9E54452970BDFA00B46232 /* PopularDestinationDetailView.swift */; };
+		0FC778F92975EA2400C64B83 /* CustomPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC778F82975EA2400C64B83 /* CustomPageViewController.swift */; };
 		0FEAA906296DFEA800D46346 /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEAA905296DFEA800D46346 /* ActivityIndicatorView.swift */; };
 		0FEAA909296DFF1800D46346 /* CategoryDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEAA908296DFF1800D46346 /* CategoryDetailsViewModel.swift */; };
 		0FEAA90B296E008C00D46346 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FEAA90A296E008C00D46346 /* ActivityIndicator.swift */; };
@@ -71,6 +72,7 @@
 		0F86B90F29731980007489C7 /* HeaderDestinationContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderDestinationContainer.swift; sourceTree = "<group>"; };
 		0F9E54432970B95F00B46232 /* NavigationLazyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationLazyView.swift; sourceTree = "<group>"; };
 		0F9E54452970BDFA00B46232 /* PopularDestinationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularDestinationDetailView.swift; sourceTree = "<group>"; };
+		0FC778F82975EA2400C64B83 /* CustomPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPageViewController.swift; sourceTree = "<group>"; };
 		0FEAA905296DFEA800D46346 /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
 		0FEAA908296DFF1800D46346 /* CategoryDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetailsViewModel.swift; sourceTree = "<group>"; };
 		0FEAA90A296E008C00D46346 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 		0F86B909297308AA007489C7 /* DestinationDetail */ = {
 			isa = PBXGroup;
 			children = (
+				0FC778F72975EA1100C64B83 /* CustomPageView */,
 				0F86B90A29730F77007489C7 /* Annotation */,
 				0F9E54452970BDFA00B46232 /* PopularDestinationDetailView.swift */,
 				0F86B90F29731980007489C7 /* HeaderDestinationContainer.swift */,
@@ -235,6 +238,14 @@
 				0F86B90D29731108007489C7 /* AnnotationView.swift */,
 			);
 			path = Annotation;
+			sourceTree = "<group>";
+		};
+		0FC778F72975EA1100C64B83 /* CustomPageView */ = {
+			isa = PBXGroup;
+			children = (
+				0FC778F82975EA2400C64B83 /* CustomPageViewController.swift */,
+			);
+			path = CustomPageView;
 			sourceTree = "<group>";
 		};
 		0FEAA903296DFE8A00D46346 /* Common */ = {
@@ -372,6 +383,7 @@
 				0F86B90E29731108007489C7 /* AnnotationView.swift in Sources */,
 				0F667C54296AD90800120085 /* TrendingCreatorsView.swift in Sources */,
 				0F667C68296AE21C00120085 /* Color+Extension.swift in Sources */,
+				0FC778F92975EA2400C64B83 /* CustomPageViewController.swift in Sources */,
 				0F667C1F296AD53900120085 /* TravelFunApp.swift in Sources */,
 				0F9E54462970BDFA00B46232 /* PopularDestinationDetailView.swift in Sources */,
 				0F667C5C296ADE5B00120085 /* User.swift in Sources */,
