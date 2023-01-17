@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0F37368F2975F5B000B1E9EF /* PopularDestinationDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F37368E2975F5B000B1E9EF /* PopularDestinationDetailViewModel.swift */; };
+		0F4B5AA22977362C00DC250F /* RestaurantDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F4B5AA12977362C00DC250F /* RestaurantDetailsView.swift */; };
 		0F667C1F296AD53900120085 /* TravelFunApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F667C1E296AD53900120085 /* TravelFunApp.swift */; };
 		0F667C21296AD53900120085 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F667C20296AD53900120085 /* ContentView.swift */; };
 		0F667C23296AD53C00120085 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F667C22296AD53C00120085 /* Assets.xcassets */; };
@@ -49,6 +50,7 @@
 
 /* Begin PBXFileReference section */
 		0F37368E2975F5B000B1E9EF /* PopularDestinationDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularDestinationDetailViewModel.swift; sourceTree = "<group>"; };
+		0F4B5AA12977362C00DC250F /* RestaurantDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailsView.swift; sourceTree = "<group>"; };
 		0F667C1B296AD53900120085 /* TravelFun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelFun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F667C1E296AD53900120085 /* TravelFunApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelFunApp.swift; sourceTree = "<group>"; };
 		0F667C20296AD53900120085 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -98,6 +100,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F4B5A9C297735A800DC250F /* PopularPlaces */ = {
+			isa = PBXGroup;
+			children = (
+				0F667C51296AD8C000120085 /* PopularPlacesView.swift */,
+				0F4B5AA12977362C00DC250F /* RestaurantDetailsView.swift */,
+			);
+			path = PopularPlaces;
+			sourceTree = "<group>";
+		};
 		0F667C12296AD53900120085 = {
 			isa = PBXGroup;
 			children = (
@@ -166,11 +177,11 @@
 		0F667C56296ADA4900120085 /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
+				0F4B5A9C297735A800DC250F /* PopularPlaces */,
 				0FEAA907296DFF0000D46346 /* CategoryDetail */,
 				0F86B909297308AA007489C7 /* DestinationDetail */,
 				0F667C4D296AD7DC00120085 /* DiscoverCategoriesView.swift */,
 				0F667C4F296AD85100120085 /* PopularDestinationsView.swift */,
-				0F667C51296AD8C000120085 /* PopularPlacesView.swift */,
 				0F667C53296AD90800120085 /* TrendingCreatorsView.swift */,
 			);
 			path = Subviews;
@@ -390,6 +401,7 @@
 				0F667C1F296AD53900120085 /* TravelFunApp.swift in Sources */,
 				0F9E54462970BDFA00B46232 /* PopularDestinationDetailView.swift in Sources */,
 				0F667C5C296ADE5B00120085 /* User.swift in Sources */,
+				0F4B5AA22977362C00DC250F /* RestaurantDetailsView.swift in Sources */,
 				0F667C4E296AD7DC00120085 /* DiscoverCategoriesView.swift in Sources */,
 				0F667C52296AD8C000120085 /* PopularPlacesView.swift in Sources */,
 				0F667C5E296ADE6D00120085 /* Restaurant.swift in Sources */,

@@ -33,6 +33,7 @@ struct HomeView: View {
         DiscoverCategoriesView()
 
         VStack {
+          
           PopularDestinationsView()
 
           PopularPlacesView()
