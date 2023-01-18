@@ -23,7 +23,14 @@ struct CategoryDetailsView: View {
         ScrollView {
           ForEach(viewModel.categories, id: \.self) { category in
             VStack(alignment: .leading) {
-              AsyncImage(url: URL(string: category.thumbnail), scale: 2.2)
+              AsyncImage(url: URL(string: category.thumbnail)) { image in
+                image
+                  .resizable()
+                  .scaledToFill()
+              } placeholder: {
+                ProgressView()
+              }
+
               Text(category.name)
                 .font(.system(size: 14, weight: .semibold))
                 .padding()

@@ -7,7 +7,53 @@
 
 import SwiftUI
 
+struct RestaurantDetails: Codable {
+    let description: String
+    let popularDishes: [Dish]
+}
+
+struct Dish: Codable, Hashable {
+    let name, price, photo: String
+    let numPhotos: Int
+}
+
+
+class RestaurantDetailsViewModel: ObservableObject {
+
+  @Published var isLoading: Bool = true
+  @Published var errorMessage: String = ""
+  @Published var restaurantDetails: RestaurantDetails?
+
+  init(id: Int) {
+
+    let url = URL(string: "https://travel.letsbuildthatapp.com/travel_discovery/restaurant?id=\(id)")
+    guard let url = url else { return }
+
+    URLSession.shared.dataTask(with: url) { (data, response, error) in
+      DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+
+        guard let data = data else { return }
+
+        do {
+          self.restaurantDetails = try JSONDecoder().decode(RestaurantDetails.self, from: data)
+        } catch {
+          print("Failed to decode JSON:", error)
+          self.errorMessage = error.localizedDescription
+        }
+        self.isLoading = false
+      }
+    }
+    .resume()
+  }
+}
+
 struct RestaurantDetailsView: View {
+
+  @ObservedObject var viewModel: RestaurantDetailsViewModel
+
+  init(id: Int) {
+    self.viewModel = .init(id: id)
+  }
 
     var body: some View {
       ScrollView {
@@ -57,7 +103,7 @@ struct RestaurantDetailsView: View {
             }
           }
 
-          Text("Experience the taste of authentic Italian cuisine at our charming restaurant. With a cozy outdoor seating area and a menu featuring fresh pasta, wood-fired pizzas, and a wide selection of wine. Open for lunch and dinner, we are the perfect spot for a romantic dinner or a casual family meal.")
+          Text(viewModel.restaurantDetails?.description ?? "")
             .font(.system(size: 12, weight: .regular))
 
           Text("Popular Dishes")
@@ -65,24 +111,24 @@ struct RestaurantDetailsView: View {
 
           ScrollView(.horizontal, showsIndicators: false) {
             HStack {
-              ForEach(PopularPlacesView.restaurants, id: \.self) { destination in
+              ForEach(viewModel.restaurantDetails?.popularDishes ?? [], id: \.self) { dish in
                 VStack(alignment: .leading, spacing: .zero) {
 
-                  Image("tapas")
-                    .resizable()
-                    .scaledToFill()
-                    .frame(height: 80)
-                    .cornerRadius(5)
-                    .overlay(RoundedRectangle(cornerRadius: 5).stroke(Color.gray))
-                    .shadow(radius: 2)
-                    .padding(.vertical, 2)
+                  AsyncImage(url: URL(string: dish.photo)) { image in
+                    image
+                      .resizable()
+                      .scaledToFill()
+                  } placeholder: {
+                    ProgressView()
+                  }
+                  .frame(width: 80, height: 80)
 
                   Group {
-                    Text(destination.city)
+                    Text(dish.name)
                       .font(.system(size: 12, weight: .bold))
                       .foregroundColor(.black)
 
-                    Text("88 photos")
+                    Text("\(dish.numPhotos) Photos")
                       .font(.system(size: 12, weight: .regular))
                       .padding(.bottom, 8)
                       .foregroundColor(.gray)
@@ -103,6 +149,6 @@ struct RestaurantDetailsView: View {
 
 struct RestaurantDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-      RestaurantDetailsView()
+      RestaurantDetailsView(id: 0)
     }
 }

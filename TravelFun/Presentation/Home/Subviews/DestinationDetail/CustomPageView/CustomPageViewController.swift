@@ -22,8 +22,13 @@ class CustomPageViewController: UIPageViewController, UIPageViewControllerDataSo
 
     allControllers = imageURLStrings.map({ imageName in
       let hostingController = UIHostingController(rootView:
-      AsyncImage(url: URL(string: imageName))
-        .scaledToFill())
+                                                    AsyncImage(url: URL(string: imageName)) { image in
+        image
+          .resizable()
+          .scaledToFill()
+      } placeholder: {
+        ProgressView()
+      })
       hostingController.view.clipsToBounds = true
       return hostingController
     })

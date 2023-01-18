@@ -44,7 +44,7 @@ struct PopularPlacesView: View {
         HStack(spacing: 8.0) {
           ForEach(PopularPlacesView.restaurants, id: \.self) { restaurant in
             NavigationLink {
-              NavigationLazyView(RestaurantDetailsView())
+              NavigationLazyView(RestaurantDetailsView(id: 0))
             } label: {
               PlaceTile(restaurant: restaurant)
                 .foregroundColor(.black)
