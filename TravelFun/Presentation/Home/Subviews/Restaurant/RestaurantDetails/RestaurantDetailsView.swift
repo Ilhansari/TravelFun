@@ -39,9 +39,13 @@ struct RestaurantDetailsView: View {
 
             Spacer()
 
-            Text("See more photos")
-              .font(.system(size: 14, weight: .semibold))
-              .foregroundColor(.white)
+            NavigationLink {
+              Text("Destination")
+            } label: {
+              Text("See more photos")
+                .font(.system(size: 14, weight: .semibold))
+                .foregroundColor(.white)
+            }
           }
           .padding(.horizontal, 8)
           .padding(.bottom, 8)
@@ -113,6 +117,8 @@ struct RestaurantDetailsView: View {
 
 struct RestaurantDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-      RestaurantDetailsView(id: 0)
+      NavigationView {
+        RestaurantDetailsView(id: 0)
+      }
     }
 }
