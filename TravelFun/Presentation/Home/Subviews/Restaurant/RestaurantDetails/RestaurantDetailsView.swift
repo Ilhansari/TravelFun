@@ -28,7 +28,6 @@ struct RestaurantDetailsView: View {
               Text("Japan's Finest Tapas")
                 .font(.system(size: 20, weight: .semibold))
                 .foregroundColor(.white)
-                .fixedSize()
 
               HStack(spacing: .zero) {
                 ForEach(0..<5) { _ in
@@ -96,8 +95,10 @@ struct RestaurantDetailsView: View {
                 }
                 .asTile()
               }
+
             }
           }
+          ReviewsView()
         }
         .padding(.horizontal, 12)
 

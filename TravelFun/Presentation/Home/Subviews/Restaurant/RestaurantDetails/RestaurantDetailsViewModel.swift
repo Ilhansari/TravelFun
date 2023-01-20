@@ -8,13 +8,15 @@ class RestaurantDetailsViewModel: ObservableObject {
 
   init(id: Int) {
 
-    let url = URL(string: "https://travel.letsbuildthatapp.com/travel_discovery/restaurant?id=\(id)")
-    guard let url = url else { return }
+    guard let url = URL(string: "https://travel.letsbuildthatapp.com/travel_discovery/restaurant?id=\(id)") else { return }
 
     URLSession.shared.dataTask(with: url) { (data, response, error) in
-      DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+      DispatchQueue.main.async {
 
-        guard let data = data else { return }
+        guard let data = data else {
+          self.errorMessage = error?.localizedDescription ?? ""
+          return
+        }
 
         do {
           self.restaurantDetails = try JSONDecoder().decode(RestaurantDetails.self, from: data)
