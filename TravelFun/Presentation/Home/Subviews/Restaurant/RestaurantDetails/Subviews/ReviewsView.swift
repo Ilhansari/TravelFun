@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ReviewsView: View {
+
+    let reviews: [Review]
+
     var body: some View {
       ScrollView(.vertical, showsIndicators: false) {
         VStack(alignment: .leading) {
@@ -15,23 +18,28 @@ struct ReviewsView: View {
           .font(.system(size: 20, weight: .bold))
           .padding(.vertical, 12)
 
-          ForEach(0..<5) { _ in
+          ForEach(reviews, id: \.self) { review in
 
             HStack {
-              Image("billy")
-                .resizable()
-                .scaledToFill()
-                .frame(width: 40.0, height: 40.0)
-                .clipShape(Circle())
+              AsyncImage(url: URL(string: review.user.profileImage)) { image in
+                image
+                  .resizable()
+                  .scaledToFill()
+                  .clipShape(Circle())
+              } placeholder: {
+                ProgressView()
+              }
+              .frame(width: 40, height: 40)
 
               VStack(alignment: .leading) {
-                Text("Amy Adams")
-                .font(.system(size: 16, weight: .semibold))
+                Text("\(review.user.firstName) \(review.user.lastName)")
+                  .font(.system(size: 16, weight: .semibold))
 
                 HStack(spacing: .zero) {
-                  ForEach(0..<5) { _ in
+                  ForEach(0..<5) { index in
+
                     Image(systemName: "star.fill")
-                      .foregroundColor(.yellow)
+                      .foregroundColor(index < review.rating ? .yellow : .gray)
                       .scaledToFit()
                   }
                 }
@@ -44,7 +52,7 @@ struct ReviewsView: View {
               .foregroundColor(Color.gray)
 
             }
-            Text("They are always here on time, never leave early and adhere to all company break times.")
+            Text(review.text)
             .font(.system(size: 14, weight: .regular))
           }
         }
@@ -54,6 +62,6 @@ struct ReviewsView: View {
 
 struct ReviewsView_Previews: PreviewProvider {
     static var previews: some View {
-        ReviewsView()
+      ReviewsView(reviews: [.init(user: .init(id: 0, username: "Adam", firstName: "Any", lastName: "Angelo", profileImage: "billy"), rating: 4, text: "It is a pencil.")])
     }
 }

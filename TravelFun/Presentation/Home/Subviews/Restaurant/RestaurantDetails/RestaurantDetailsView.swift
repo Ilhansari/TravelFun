@@ -98,7 +98,10 @@ struct RestaurantDetailsView: View {
 
             }
           }
-          ReviewsView()
+          if let reviews = viewModel.restaurantDetails?.reviews {
+            ReviewsView(reviews: reviews)
+          }
+
         }
         .padding(.horizontal, 12)
 
