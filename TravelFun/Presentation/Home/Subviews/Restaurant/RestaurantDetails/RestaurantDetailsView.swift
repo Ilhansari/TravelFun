@@ -40,7 +40,7 @@ struct RestaurantDetailsView: View {
             Spacer()
 
             NavigationLink {
-              Text("Destination")
+              RestaurantPhotosView()
             } label: {
               Text("See more photos")
                 .font(.system(size: 14, weight: .semibold))
