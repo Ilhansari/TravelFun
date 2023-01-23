@@ -29,21 +29,63 @@ struct RestaurantPhotosView: View {
       "https://letsbuildthatapp-videos.s3.us-west-2.amazonaws.com/73f69749-f986-46ac-9b8b-d7b1d42bddc5"
       ]
 
+  @State var mode = "list"
+
+
+  init() {
+    UISegmentedControl.appearance().backgroundColor = .black
+    UISegmentedControl.appearance().selectedSegmentTintColor = .orange
+  }
+
   var body: some View {
     GeometryReader { proxy in
       ScrollView {
-        LazyVGrid(columns: [GridItem(.adaptive(minimum: proxy.size.width / 3 - 6,
-                                               maximum: 300))], spacing: 2) {
-          ForEach(photoUrlStrings, id: \.self) { photoUrlString in
-            AsyncImage(url: URL(string: photoUrlString)) { image in
-              image
-                .resizable()
-                .scaledToFill()
-                .frame(width: proxy.size.width / 3 - 3, height: proxy.size.width / 3 - 3)
-                .clipped()
-            } placeholder: {
-              ProgressView()
+
+        Picker("TEXT", selection: $mode) {
+          Text("Grid").tag("grid")
+          Text("List").tag("list")
+        }.pickerStyle(.segmented)
+          .padding()
+        if mode == "grid" {
+          LazyVGrid(columns: [GridItem(.adaptive(minimum: proxy.size.width / 3 - 6,
+                                                 maximum: 300))], spacing: 2) {
+            ForEach(photoUrlStrings, id: \.self) { photoUrlString in
+              AsyncImage(url: URL(string: photoUrlString)) { image in
+                image
+                  .resizable()
+                  .scaledToFill()
+                  .frame(width: proxy.size.width / 3 - 3, height: proxy.size.width / 3 - 3)
+                  .clipped()
+              } placeholder: {
+                ProgressView()
+              }
             }
+          }
+        }  else {
+          ForEach(photoUrlStrings, id: \.self) { photoUrlString in
+            VStack(alignment: .leading) {
+              AsyncImage(url: URL(string: photoUrlString)) { image in
+                image
+                  .resizable()
+                  .scaledToFill()
+              } placeholder: {
+                ProgressView()
+              }
+              HStack {
+                Image(systemName: "heart")
+                Image(systemName: "bubble.right")
+                Image(systemName: "paperplane")
+                Spacer()
+                Image(systemName: "bookmark")
+              }
+              .font(.system(size: 22))
+              Text("Description for you post and it goes here, make sure to use bunch of lines.")
+                .padding(.top, 8)
+              Text("Posted on 2010")
+                .foregroundColor(.gray)
+                .padding(.top, 8)
+            }
+            .padding(.horizontal, 8)
           }
         }
       }
