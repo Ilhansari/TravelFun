@@ -77,7 +77,7 @@ struct RestaurantPhotosView: View {
                   image
                     .resizable()
                     .scaledToFill()
-                    .frame(width: proxy.size.width / 3 - 3, height: proxy.size.width / 3 - 3)
+                    .frame(width: proxy.size.width / 3 - 3, height: proxy.size.width / 3 - 3) 
                     .clipped()
                 } placeholder: {
                   ProgressView()

@@ -29,18 +29,13 @@ struct TrendingCreatorsView: View {
       ScrollView(.horizontal, showsIndicators: false) {
         HStack {
           ForEach(users, id: \.self) { user in
-            VStack(spacing: 4) {
-              Image(user.imageName)
-                .resizable()
-                .scaledToFill()
-                .clipped()
-                .frame(width: 60, height: 60)
-                .cornerRadius(60)
-                .shadow(color: .gray, radius: 4, x: 0.0, y: 2)
-              Text(user.name)
-                .font(.system(size: 11, weight: .semibold))
-                .multilineTextAlignment(.center)
+            NavigationLink {
+              UserDetailsView(user: user)
+            } label: {
+              DiscoverUserView(user: user)
+                .foregroundColor(.black)
             }
+
           }
         }
         .padding(.horizontal)
@@ -49,11 +44,31 @@ struct TrendingCreatorsView: View {
   }
 }
 
+struct DiscoverUserView: View {
+
+  let user: User
+
+  var body: some View {
+    VStack(spacing: 4) {
+      Image(user.imageName)
+        .resizable()
+        .scaledToFill()
+        .clipped()
+        .frame(width: 60, height: 60)
+        .cornerRadius(60)
+        .shadow(color: .gray, radius: 4, x: 0.0, y: 2)
+      Text(user.name)
+        .font(.system(size: 11, weight: .semibold))
+        .multilineTextAlignment(.center)
+    }
+    .navigationBarTitle("Discover", displayMode: .inline)
+  }
+}
+
 struct TrendingCreators_Previews: PreviewProvider {
     static var previews: some View {
-      VStack {
+      NavigationView {
         TrendingCreatorsView()
       }
-
     }
 }
