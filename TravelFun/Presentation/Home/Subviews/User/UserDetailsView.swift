@@ -13,7 +13,7 @@ struct UserDetailsView: View {
 
   var body: some View {
     ScrollView {
-      VStack(spacing: 12) {
+      VStack(spacing: 10) {
         Image(user.imageName)
           .resizable()
           .scaledToFill()
@@ -88,22 +88,57 @@ struct UserDetailsView: View {
                   Spacer()
               }
               .padding(.vertical, 8)
-              .background(.gray)
+              .background(Color.init(white: 0.6))
               .cornerRadius(100)
-
             }
           }
-
         }
         .padding()
 
-        ForEach(0..<5) { _ in
-          Image("tapas")
-            .resizable()
-            .scaledToFill()
-            .clipped()
-            .cornerRadius(5)
-            .padding(.horizontal)
+        ForEach(0..<10) { _ in
+
+          VStack(alignment: .leading) {
+            Image("tapas")
+              .resizable()
+              .scaledToFill()
+
+            HStack {
+              Image("billy")
+                .resizable()
+                .scaledToFit()
+                .frame(height: 34)
+                .clipShape(Circle())
+
+              VStack(alignment: .leading) {
+                Text("Test post text here for preview to see...")
+                  .font(.system(size: 13, weight: .bold))
+                  .foregroundColor(.black)
+
+                Text("500k views")
+                  .font(.system(size: 12, weight: .semibold))
+                  .foregroundColor(.gray)
+              }
+
+            }
+            .padding(.horizontal, 8)
+
+            HStack(spacing: 5) {
+              ForEach(0..<3) { _ in
+                Text("#Travelling")
+                  .font(.system(size: 12, weight: .semibold))
+                  .foregroundColor(.white)
+                  .background(Color(.systemBlue))
+                  .cornerRadius(20)
+              }
+            }
+            .padding(.horizontal, 8)
+            .padding(.bottom, 8)
+          }
+
+          .background(Color.white)
+          .cornerRadius(12)
+          .padding()
+          .shadow(color: .init(white: 0.8), radius: 5, x: 0, y: 4)
         }
       }
     }
